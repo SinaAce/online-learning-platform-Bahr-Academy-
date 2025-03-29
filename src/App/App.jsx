@@ -1,10 +1,15 @@
-import MainLayout from "../Components/Core/Layout/MainLayout";
+import { BrowserRouter, useRoutes } from "react-router-dom";
+import { commonRoute } from "../Config/Router/common.route";
+
+const AppRoutes = () => {
+  return useRoutes(commonRoute);
+};
 
 function App() {
   return (
-    <div>
-      <MainLayout />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

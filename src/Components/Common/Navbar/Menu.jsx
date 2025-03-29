@@ -8,7 +8,9 @@ const Menu = () => {
       <span>دوره ها </span>
       <span>بلاگ ها</span>
       <span>درباره ما</span>
-      <span className="bgblue p-2 rounded-3xl whitetext">ثبت نام یا ورود</span>
+      <NavLink to="/login" className="bgblue p-2 rounded-3xl whitetext">
+        ثبت نام یا ورود
+      </NavLink>
     </div>
   );
 };

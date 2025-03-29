@@ -15,6 +15,9 @@ body {
   .whitetext {
     @apply text-[#FCFCFC];
   }
+  .bluetext {
+    @apply text-[#3772FF];
+  }
   .bgblack {
     @apply bg-[#2F2F2F];
   }

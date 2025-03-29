@@ -1,10 +1,29 @@
-import { Children } from "react";
 import MainLayout from "../../Components/Core/Layout/MainLayout";
+import Login from "../../Components/Auth/Login";
+import Register from "../../Components/Auth/Register";
+import Forgotpass from "../../Components/Auth/Forgotpass";
+import Notfound from "../../Components/Pages/404/Notfound";
 
-export const commonRoute = () => [
+export const commonRoute = [
   {
     path: "/",
-    Element: <MainLayout />,
-    Children: "",
+    element: <MainLayout />,
+    children: [],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Register />,
+  },
+  {
+    path: "/forgotpassword",
+    element: <Forgotpass />,
+  },
+  {
+    path: "*",
+    element: <Notfound />,
   },
 ];
