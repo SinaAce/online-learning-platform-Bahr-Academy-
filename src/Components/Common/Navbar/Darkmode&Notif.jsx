@@ -8,7 +8,7 @@ const DarkmodeNotif = () => {
       <div className="w-14 h-full border rounded-full flex items-center justify-center">
         <img src={notification} alt="notification" />
       </div>
-      <div className="w-14 h-full border rounded-full bg-[#2F2F2F] flex items-center justify-center">
+      <div className="w-14 h-full border rounded-full bgblack flex items-center justify-center">
         <img src={darkIcon} alt="darkIcon" />
       </div>
     </div>

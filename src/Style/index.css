@@ -5,3 +5,35 @@
 :root {
   font-family: dana;
 }
+body {
+  background-color: #fafbfc;
+}
+@layer components {
+  .blacktext {
+    @apply text-[#2F2F2F];
+  }
+  .whitetext {
+    @apply text-[#FCFCFC];
+  }
+  .bgblack {
+    @apply bg-[#2F2F2F];
+  }
+  .bgwhite {
+    @apply bg-[#FCFCFC];
+  }
+  .bgblue {
+    @apply bg-[#3772FF];
+  }
+  .basicflex {
+    @apply flex justify-center items-center;
+  }
+  .basiccolflex {
+    @apply flex justify-center items-center flex-col;
+  }
+  .flexaround {
+    @apply flex justify-around items-center;
+  }
+  .flexbetween {
+    @apply flex justify-between items-center;
+  }
+}
