@@ -1,7 +1,7 @@
 import MainLayout from "../../Components/Core/Layout/MainLayout";
-import Login from "../../Components/Auth/Login";
-import Register from "../../Components/Auth/Register";
-import Forgotpass from "../../Components/Auth/Forgotpass";
+import Login from "../../Components/Pages/Auth/Login";
+import Register from "../../Components/Pages/Auth/Register";
+import Forgotpass from "../../Components/Pages/Auth/Forgotpass";
 import Notfound from "../../Components/Pages/404/Notfound";
 
 export const commonRoute = [

@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LoginPic from "./LoginPic";
 import { Field, Form, Formik } from "formik";
-import { NavLink } from "react-router-dom";
-import homeIcon from '../../assets/Auth/home-04.svg'
+import { NavLink, useNavigate } from "react-router-dom";
+import homeIcon from "../../../assets/Auth/home-04.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../../Features/Auth/AuthSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { token, isLoading } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [token, navigate]);
+
   return (
     <div className="w-[1440px] mx-auto h-[730px] basicflex p-5 gap-3">
       <div className="w-1/2 h-full flex flex-col gap-5">
@@ -28,18 +40,36 @@ const Login = () => {
             را وارد کنید
           </span>
         </div>
-        <Formik>
+        <Formik
+          initialValues={{
+            emailOrPhone: "",
+            password: "",
+          }}
+          onSubmit={(values) => {
+            console.log("مقادیر ارسال‌شده:", values);
+            dispatch(loginUser(values));
+          }}
+        >
           <Form className="w-2/3 mx-auto flex flex-col gap-3 mt-7">
             <label className="font-semibold">شماره همراه یا ایمیل</label>
             <Field
+              name="emailOrPhone"
               className="border border-[#DCDCDC] bgwhite rounded-3xl p-3 h-12 outline-none"
-              placeHolder="شماره همراه یا ایمیل خود را وارد کنید"
+              placeholder="شماره همراه یا ایمیل خود را وارد کنید"
             />
             <label className="font-semibold">رمزعبور</label>
             <Field
+              name="password"
+              type="password"
               className="border border-[#DCDCDC] bgwhite rounded-3xl p-3 h-12 outline-none"
-              placeHolder="رمزعبور خود را وارد کنید"
+              placeholder="رمزعبور خود را وارد کنید"
             />
+            <button
+              type="submit"
+              className="rounded-3xl p-3 h-12 w-2/3 mx-auto bgblue whitetext"
+            >
+              {isLoading ? "در حال ورود..." : "ورود به حساب"}
+            </button>
           </Form>
         </Formik>
         <div className="flexbetween h-12 w-2/3 mx-auto">
@@ -56,18 +86,21 @@ const Login = () => {
             رمزعبور را فراموش کردید؟
           </div>
         </div>
-        <button className="rounded-3xl p-3 h-12 w-2/3 mx-auto bgblue whitetext">
-          ورود به حساب
-        </button>
         <div className="w-2/3 mx-auto basicflex gap-11">
           <span className="font-semibold text-[0.875rem]">
             حساب کاربری ندارید؟
           </span>
-          <NavLink to="/signup" className="font-semibold text-[0.875rem] bluetext underline">
+          <NavLink
+            to="/signup"
+            className="font-semibold text-[0.875rem] bluetext underline"
+          >
             ایجاد حساب کاربری
           </NavLink>
         </div>
-        <NavLink to="/" className="p-3 bluetext basicflex gap-2 border border-[#DCDCDC] w-36 rounded-[34px] mx-auto">
+        <NavLink
+          to="/"
+          className="p-3 bluetext basicflex gap-2 border border-[#DCDCDC] w-36 rounded-[34px] mx-auto"
+        >
           <span>صفحه اصلی</span>
           <img src={homeIcon} alt="homeIcon" />
         </NavLink>

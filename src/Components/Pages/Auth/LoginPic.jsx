@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "./../Common/Navbar/Logo";
-import loginVector from "../../assets/Auth/3d-hygge-top-view-of-laptop-glasses-cup-of-coffee-headphones-1 1.svg";
+import Logo from "../../Common/Navbar/Logo";
+import loginVector from "../../../assets/Auth/3d-hygge-top-view-of-laptop-glasses-cup-of-coffee-headphones-1 1.svg";
 
 const LoginPic = () => {
   return (
