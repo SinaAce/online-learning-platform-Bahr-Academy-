@@ -3,7 +3,7 @@ import axios from "axios";
 const axoisInstance = axios.create({
   baseURL: "https://classapi.sepehracademy.ir/api",
   headers: {
-    "Content-Type": "application/jason",
+    "Content-Type": "application/json",
   },
 });
 
