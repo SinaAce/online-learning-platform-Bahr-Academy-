@@ -7,19 +7,11 @@ export const loginUser = createAsyncThunk(
   async ({ emailOrPhone, password }, thunkAPI) => {
     try {
       console.log("در حال ارسال درخواست ورود...");
-      const response = await axios.post(
-        "/Sign/Login",
-        {
-          phoneOrGmail: emailOrPhone,
-          password,
-          rememberMe: true,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios.post("/Sign/Login", {
+        phoneOrGmail: emailOrPhone,
+        password,
+        rememberMe: true,
+      });
       console.log("پاسخ از API:", response.data);
       toast.success("خوش آمدید !");
       return response.data;
@@ -48,6 +40,9 @@ const authSlice = createSlice({
       state.user = null;
       state.token = null;
       localStorage.removeItem("token");
+    },
+    setTokenFromStorage: (state, action) => {
+      state.token = action.payload;
     },
   },
   extraReducers: (builder) => {

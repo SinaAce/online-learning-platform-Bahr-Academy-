@@ -1,12 +1,18 @@
 import axios from "axios";
 
-const baseURL = "https://classapi.sepehracademy.ir/api";
-
 const axoisInstance = axios.create({
-  baseURL,
+  baseURL: "https://classapi.sepehracademy.ir/api",
   headers: {
-    "Content-Type": "application.jason",
+    "Content-Type": "application/jason",
   },
+});
+
+axoisInstance.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 export default axoisInstance;
