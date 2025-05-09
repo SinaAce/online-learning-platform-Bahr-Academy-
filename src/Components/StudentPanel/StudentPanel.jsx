@@ -1,12 +1,19 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import PanelNavbar from "./PanelNavbar";
+import PanelSideMenu from "./PanelSideMenu";
+import Dashboard from "./Dashboard";
 
 const StudentPanel = () => {
   return (
     <div className="bg-[#242424] h-screen">
-      <NavLink to="/panel">dashboard</NavLink>
-      <NavLink to="/panel/profile">profile</NavLink>
-      <Outlet />
+      <PanelNavbar />
+      <div className="flex gap-10 m-5">
+        <PanelSideMenu />
+        <div className="border border-yellow-500 w-4/5">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };
