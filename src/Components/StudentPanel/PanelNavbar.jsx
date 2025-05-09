@@ -3,14 +3,14 @@ import Logo from "../Common/Navbar/Logo";
 import DarkmodeNotif from "../Common/Navbar/Darkmode&Notif";
 import PanelTopMenu from "./PanelTopMenu";
 
-const PanelNavbar = () => {
+const PanelNavbar = ({ userInfo }) => {
   return (
     <div className="h-14 w-full flex justify-between">
       <Logo />
       <div className="flex gap-3 whitetext items-center">
-        <img src="" alt="pic" className="w-12 h-12 border rounded-full" />
+        <img src={userInfo.userImage} alt="pic" className="w-12 h-12 border rounded-full" />
         <div className="flex flex-col">
-          <span>سلام سینا</span>
+          <span>سلام {userInfo.fName}</span>
           <span>دانشجو</span>
         </div>
       </div>

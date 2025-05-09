@@ -37,15 +37,15 @@ export const commonRoute = [
         <StudentPanel />
       </PrivateRoute>
     ),
-    children:[
+    children: [
       {
         index: true,
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "profile",
-        element: <EditProfile />
-      }
-    ]
+        element: <EditProfile />,
+      },
+    ],
   },
 ];

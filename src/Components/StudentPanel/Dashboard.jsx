@@ -1,13 +1,14 @@
-import React from "react";
+import { useOutletContext } from "react-router-dom";
 
 const Dashboard = () => {
+  const { userInfo } = useOutletContext();
   return (
     <div className="whitetext flex flex-col gap-3">
-      <span>fname</span>
-      <span>lname</span>
-      <span>number</span>
-      <span>user about</span>
-      <span>gender</span>
+      <span>fname : {userInfo.fName}</span>
+      <span>lname : {userInfo.lName}</span>
+      <span>number : {userInfo.phoneNumber}</span>
+      <span>user about : {userInfo.userAbout}</span>
+      <span>gender : {userInfo.gender ? "مرد" : "زن"}</span>
     </div>
   );
 };
