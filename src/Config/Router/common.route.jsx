@@ -5,6 +5,8 @@ import Forgotpass from "../../Components/Pages/Auth/Forgotpass";
 import Notfound from "../../Components/Pages/404/Notfound";
 import PrivateRoute from "./privateRoute";
 import StudentPanel from "../../Components/StudentPanel/StudentPanel";
+import Dashboard from "../../Components/StudentPanel/Dashboard";
+import EditProfile from "../../Components/StudentPanel/EditProfile";
 
 export const commonRoute = [
   {
@@ -29,11 +31,21 @@ export const commonRoute = [
     element: <Notfound />,
   },
   {
-    path: "/dashboard",
+    path: "/panel",
     element: (
       <PrivateRoute>
         <StudentPanel />
       </PrivateRoute>
     ),
+    children:[
+      {
+        index: true,
+        element: <Dashboard />
+      },
+      {
+        path: "profile",
+        element: <EditProfile />
+      }
+    ]
   },
 ];

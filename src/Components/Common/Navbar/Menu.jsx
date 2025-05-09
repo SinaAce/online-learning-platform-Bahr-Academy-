@@ -13,7 +13,7 @@ const Menu = () => {
       <span>درباره ما</span>
       {
       token ? (
-        <NavLink to="/dashboard" className="bgblue p-2 rounded-3xl whitetext">
+        <NavLink to="/panel" className="bgblue p-2 rounded-3xl whitetext">
           پنل کاربری
         </NavLink>
       ) : (
