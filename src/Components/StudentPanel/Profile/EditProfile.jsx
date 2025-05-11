@@ -1,8 +1,8 @@
 import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
-import { getUserInfo } from "../../API/StudentPanel/getUserInfo";
-import { editUserInfo } from "../../API/StudentPanel/editUserInfo";
-import OnSetFormData from "../../API/StudentPanel/form-data";
+import { getUserInfo } from "../../../API/StudentPanel/getUserInfo";
+import { editUserInfo } from "../../../API/StudentPanel/editUserInfo";
+import OnSetFormData from "../../../API/StudentPanel/form-data";
 
 const EditProfile = () => {
   const [initialValues, setInitialValues] = useState(null);
