@@ -11,12 +11,13 @@ const EditProfile = () => {
     try {
       const callApi = await getUserInfo();
       const data = {
-        FName: callApi?.FName,
-        LName: callApi?.LName,
-        UserAbout: callApi?.UserAbout,
-        HomeAdderess: callApi?.HomeAdderess,
-        NationalCode: callApi?.NationalCode,
-        BirthDay: callApi?.BirthDay,
+        FName: callApi?.fName,
+        LName: callApi?.lName,
+        UserAbout: callApi?.userAbout,
+        HomeAdderess: callApi?.homeAdderess,
+        NationalCode: callApi?.nationalCode,
+        BirthDay: callApi?.birthDay,
+        Gender: callApi?.gender,
       };
       setInitialValues(data);
     } catch (error) {
@@ -61,6 +62,8 @@ const EditProfile = () => {
           <Field id="BirthDay" type="text" name="BirthDay"></Field>
           <label htmlFor="HomeAdderess">محل سکونت</label>
           <Field id="HomeAdderess" type="text" name="HomeAdderess"></Field>
+          <label htmlFor="Gender">جنسیت</label>
+          <Field id="Gender" type="text" name="Gender"></Field>
           <button type="submit">Save Changes</button>
         </Form>
       </Formik>

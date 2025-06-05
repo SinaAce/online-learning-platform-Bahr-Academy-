@@ -1,5 +1,3 @@
-import React from "react";
-
 const OnSetFormData = (value) => {
   const formData = new FormData();
   const keys = Object.keys(value);
@@ -10,9 +8,6 @@ const OnSetFormData = (value) => {
   });
 
   return formData;
-  
 };
-
-
 
 export default OnSetFormData;
