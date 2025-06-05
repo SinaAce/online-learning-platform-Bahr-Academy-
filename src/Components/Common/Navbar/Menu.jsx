@@ -7,12 +7,11 @@ const Menu = () => {
 
   return (
     <div className="h-full w-4/12 bgblack rounded-[56px] whitetext flex items-center justify-center gap-7 ml-24">
-      <span>خانه</span>
-      <span>دوره ها </span>
+      <NavLink to='/'>خانه</NavLink>
+      <NavLink to="/courses">دوره ها </NavLink>
       <span>بلاگ ها</span>
       <span>درباره ما</span>
-      {
-      token ? (
+      {token ? (
         <NavLink to="/panel" className="bgblue p-2 rounded-3xl whitetext">
           پنل کاربری
         </NavLink>
@@ -20,10 +19,8 @@ const Menu = () => {
         <NavLink to="/login" className="bgblue p-2 rounded-3xl whitetext">
           ثبت نام یا ورود
         </NavLink>
-      ) 
-      }
+      )}
     </div>
-    
   );
 };
 

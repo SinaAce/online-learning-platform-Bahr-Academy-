@@ -6,13 +6,19 @@ import Notfound from "../../Components/Pages/404/Notfound";
 import PrivateRoute from "./privateRoute";
 import StudentPanel from "../../Components/StudentPanel/StudentPanel";
 import Dashboard from "../../Components/StudentPanel/Dashboard";
-import EditProfile from "../../Components/StudentPanel/EditProfile";
+import EditProfile from "../../Components/StudentPanel/Profile/EditProfile";
+import Courses from "../../Components/Pages/Courses/Courses";
 
 export const commonRoute = [
   {
     path: "/",
     element: <MainLayout />,
-    children: [],
+    children: [
+      {
+        path: "/courses",
+        element: <Courses />,
+      },
+    ],
   },
   {
     path: "/login",
@@ -37,15 +43,15 @@ export const commonRoute = [
         <StudentPanel />
       </PrivateRoute>
     ),
-    children:[
+    children: [
       {
         index: true,
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "profile",
-        element: <EditProfile />
-      }
-    ]
+        element: <EditProfile />,
+      },
+    ],
   },
 ];
